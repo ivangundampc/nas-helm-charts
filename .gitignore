@@ -1,0 +1,21 @@
+# Developer dependencies
+.bin
+
+# Mac stuff
+.DS_Store
+
+# IDE resources
+.vscode
+.idea
+.devcontainer/
+
+# Helm resources
+charts/**/Chart.lock
+charts/**/charts
+
+# Other rsources
+.env
+.envrc
+Gemfile.lock
+angel.yaml
+.metals/metals.mv.db
