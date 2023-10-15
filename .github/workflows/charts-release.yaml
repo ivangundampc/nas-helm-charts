@@ -94,7 +94,6 @@ jobs:
         uses: helm/chart-releaser-action@v1.5.0
         with:
           charts_dir: charts/*
-          charts_repo_url: https://ivangundampc.github.io/nas-helm-charts/
         env:
           CR_TOKEN: "${{ steps.generate-token.outputs.token }}"
           CR_SKIP_EXISTING: "true"
