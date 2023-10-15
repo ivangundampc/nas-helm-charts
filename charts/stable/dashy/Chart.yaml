@@ -1,0 +1,23 @@
+apiVersion: v2
+appVersion: 1.0.0
+description: dashy helm package
+name: dashy
+version: 1.0.0
+kubeVersion: ">=1.16.0-0"
+keywords:
+- dashy
+home: https://github.com/k8s-at-home/charts/tree/master/charts/stable/dashy
+icon: https://dashy.org/icon
+sources:
+- https://github.com/dashy/dashy-docker
+maintainers:
+- name: dashy
+  email: dashy@dashy.com
+dependencies:
+- name: common
+  repository: https://library-charts.k8s-at-home.com
+  version: 4.3.0
+annotations:
+  artifacthub.io/changes: |
+    - kind: added
+      description: Initial version
