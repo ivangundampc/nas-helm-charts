@@ -75,8 +75,8 @@ N/A
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| env | object | See below | environment variables. See more environment variables in the [${CHARTNAME} documentation](https://${CHARTNAME}.org/docs). |
-| env.TZ | string | `"UTC"` | Set the container timezone |
+| controller.main.env | object | See below | environment variables. See more environment variables in the [${CHARTNAME} documentation](https://${CHARTNAME}.org/docs). |
+| controller.main.env.TZ | string | `"UTC"` | Set the container timezone |
 | image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
 | image.repository | string | `"${CHARTNAME}/${CHARTNAME}"` | image repository |
 | image.tag | string | chart.appVersion | image tag |
