@@ -5,22 +5,22 @@
 # https://github.com/k8s-at-home/library-charts/tree/main/charts/stable/common/values.yaml
 #
 
-image:
-  # -- image repository
-  repository: lissy93/dashy
-  # -- image tag
-  tag: 2.1.1
-  # -- image pull policy
-  pullPolicy: IfNotPresent
-
 controllers:
   main:
-    # -- environment variables. See more environment variables in the [dashy documentation](https://dashy.org/docs).
-    # @default -- See below
-    env:
-      # -- Set the container timezone
-      TZ: UTC
-      NODE_ENV: production
+    containers:
+      main:
+        image:
+          # -- image repository
+          repository: lissy93/dashy
+          # -- image tag
+          tag: 2.1.1
+          # -- image pull policy
+          pullPolicy: IfNotPresent
+          
+        env:
+          # -- Set the container timezone
+          TZ: UTC
+          NODE_ENV: production
 
 # -- Configures service settings for the chart.
 # @default -- See values.yaml
