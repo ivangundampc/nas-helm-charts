@@ -9,7 +9,7 @@ This is a repo for storing helm charts that I used in my homelab. Most of the ch
 You can add this repo as follows:
 
 ```console
-helm repo add nas-helm-charts https://ivangundampc.github.io/nas-helm-charts/
+helm repo add nas-helm-charts https://ivanwongtf.github.io/nas-helm-charts/
 ```
 
 You can then run `helm search repo nas-helm-charts` to see the charts.
