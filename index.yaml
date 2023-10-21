@@ -55,4 +55,31 @@ entries:
     urls:
     - https://github.com/ivangundampc/nas-helm-charts/releases/download/dashy-1.0.1/dashy-1.0.1.tgz
     version: 1.0.1
-generated: "2023-10-21T10:48:34.859061908Z"
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
+          description: Initial version
+    apiVersion: v2
+    appVersion: 2.1.1
+    created: "2023-10-21T11:12:38.805502478Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts/
+      version: 2.0.3
+    description: dashy helm package
+    digest: 5fc0aae9b36b4a09b394087c3252a915378d129d437c726df6303b6766633261
+    home: https://github.com/ivanwongtf/nas-helm-charts/tree/master/charts/stable/dashy
+    icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/dashy.png
+    keywords:
+    - dashy
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - email: dashy@dashy.com
+      name: dashy
+    name: dashy
+    sources:
+    - https://github.com/dashy/dashy-docker
+    urls:
+    - https://github.com/ivanwongtf/nas-helm-charts/releases/download/dashy-1.0.0/dashy-1.0.0.tgz
+    version: 1.0.0
+generated: "2023-10-21T11:12:38.805518278Z"
