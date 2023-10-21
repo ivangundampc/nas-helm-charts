@@ -7,18 +7,18 @@
 
 image:
   # -- image repository
-  repository: lissy93/dashy
+  repository: ${CHARTNAME}/${CHARTNAME}
   # -- image tag
-  tag: latest
+  # @default -- chart.appVersion
+  tag:
   # -- image pull policy
   pullPolicy: IfNotPresent
 
-# -- environment variables. See more environment variables in the [dashy documentation](https://dashy.org/docs).
+# -- environment variables. See more environment variables in the [${CHARTNAME} documentation](https://${CHARTNAME}.org/docs).
 # @default -- See below
 env:
   # -- Set the container timezone
   TZ: UTC
-  NODE_ENV: production
 
 # -- Configures service settings for the chart.
 # @default -- See values.yaml
@@ -26,7 +26,7 @@ service:
   main:
     ports:
       http:
-        port: 80
+        port: 1880
 
 ingress:
   # -- Enable and configure ingress settings for the chart under this key.
@@ -40,59 +40,3 @@ persistence: {}
   # data:
   #   enabled: false
   #   mountPath: /data
-
-probes:
-  liveness:
-    enabled: true
-    custom: false
-    spec:
-      initialDelaySeconds: 40
-      periodSeconds: 90
-      timeoutSeconds: 10
-      failureThreshold: 3
-
-persistence:
-  config:
-    enabled: true
-    readOnly: false
-    type: configMap
-    name: dashy-config
-    mountPath: /app/public/conf.yml
-    subPath: conf.yml
-    items:
-      - key: conf.yml
-        path: conf.yml
-
-configmap:
-  config: 
-    enabled: true
-    labels: {}
-    annotations: {}
-    data:
-      conf.yml: |
-        ---
-        pageInfo:
-          title: Home Lab
-        sections: # An array of sections
-        - name: Section 1 - Getting Started
-          items: # An array of items
-          - title: GitHub
-            description: Source code and documentation on GitHub
-            icon: fab fa-github
-            url: https://github.com/Lissy93/dashy
-          - title: Issues
-            description: View currently open issues, or raise a new one
-            icon: fas fa-bug
-            url: https://github.com/Lissy93/dashy/issues
-          - title: Demo
-            description: A live demo
-            icon: far fa-rocket
-            url: https://dashy-demo-1.netlify.app 
-        - name: Section 2 - Local Services
-          items:
-          - title: Firewall
-            icon: favicon
-            url: http://192.168.1.1/
-          - title: Game Server
-            icon: https://i.ibb.co/710B3Yc/space-invader-x256.png
-            url: http://192.168.130.1/
