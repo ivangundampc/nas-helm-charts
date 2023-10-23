@@ -4,6 +4,36 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: added
+          description: allow setting custom value for secrets
+    apiVersion: v2
+    appVersion: 3.0.15
+    created: "2023-10-23T09:39:50.792226148Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts/
+      version: 2.0.3
+    - name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      version: 14.0.3
+    description: akaunting helm package
+    digest: c5dff89df5fd2566bdaa6f52f140c9fd5fc17b9313ea3dda4933ec9853c7003b
+    home: https://github.com/ivanwongtf/nas-helm-charts/tree/master/charts/stable/akaunting
+    icon: https://assets.akaunting.com/site/img/logo/akaunting-logo.svg
+    keywords:
+    - akaunting
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - email: github@ivan.bz
+      name: Ivan Wong
+    name: akaunting
+    sources:
+    - https://github.com/akaunting/docker
+    urls:
+    - https://github.com/ivanwongtf/nas-helm-charts/releases/download/akaunting-1.0.1/akaunting-1.0.1.tgz
+    version: 1.0.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
           description: Initial version
     apiVersion: v2
     appVersion: 3.0.15
@@ -113,4 +143,4 @@ entries:
     urls:
     - https://github.com/ivanwongtf/nas-helm-charts/releases/download/dashy-1.0.0/dashy-1.0.0.tgz
     version: 1.0.0
-generated: "2023-10-23T09:12:18.825216694Z"
+generated: "2023-10-23T09:39:50.792249248Z"
