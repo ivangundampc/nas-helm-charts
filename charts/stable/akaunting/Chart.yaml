@@ -2,7 +2,7 @@ apiVersion: v2
 appVersion: 3.0.15
 description: akaunting helm package
 name: akaunting
-version: 1.0.0
+version: 1.0.1
 kubeVersion: ">=1.22.0-0"
 keywords:
   - akaunting
@@ -23,4 +23,4 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: added
-      description: Initial version
+      description: allow setting custom value for secrets
