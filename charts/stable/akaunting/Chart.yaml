@@ -1,0 +1,26 @@
+apiVersion: v2
+appVersion: 3.0.15
+description: akaunting helm package
+name: akaunting
+version: 1.0.0
+kubeVersion: ">=1.22.0-0"
+keywords:
+  - akaunting
+home: https://github.com/ivanwongtf/nas-helm-charts/tree/master/charts/stable/akaunting
+icon: https://assets.akaunting.com/site/img/logo/akaunting-logo.svg
+sources:
+  - https://github.com/akaunting/docker
+maintainers:
+  - name: Ivan Wong
+    email: github@ivan.bz
+dependencies:
+  - name: common
+    version: 2.0.3
+    repository: https://bjw-s.github.io/helm-charts/
+  - name: mariadb
+    version: 14.0.3
+    repository: https://charts.bitnami.com/bitnami
+annotations:
+  artifacthub.io/changes: |
+    - kind: added
+      description: Initial version

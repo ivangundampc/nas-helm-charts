@@ -1,0 +1,91 @@
+#
+# IMPORTANT NOTE
+#
+# This chart inherits from our common library chart. You can check the default values/options here:
+# https://github.com/bjw-s/helm-charts/blob/main/charts/library/common/values.yaml
+#
+
+controllers:
+  main:
+    containers:
+      main:
+        image:
+          # -- image repository
+          repository: akaunting/akaunting
+          # -- image tag
+          # @default -- chart.appVersion
+          tag: 3.0.15
+          # -- image pull policy
+          pullPolicy: IfNotPresent
+        ports:
+          - name: http
+            containerPort: 80
+            protocol: TCP
+
+        # -- environment variables. See more environment variables in the [akaunting documentation](https://akaunting.org/docs).
+        # @default -- See below
+        env:
+          # -- Set the container timezone
+          TZ: UTC
+          # -- Only set this to true when first time start the container
+          # AKAUNTING_SETUP: "true"
+          # You should change this to match your reverse proxy DNS name and protocol
+          APP_URL: http://localhost
+          # Enable DEBUG mode
+          # APP_DEBUG: "true"
+          LOCALE: en-US
+          # Database connection
+          DB_HOST: akaunting-mariadb
+          DB_PORT: 3306
+          DB_NAME: akaunting
+          DB_USERNAME: akaunting
+          DB_PASSWORD: 
+            valueFrom:
+              secretKeyRef:
+                name: mariadb-secrets
+                key: mariadb-password
+          # You should change this to a random string of three numbers or letters followed by an underscore
+          DB_PREFIX: asd_
+          # These define the first company to exist on this instance. They are only used during setup.
+          COMPANY_NAME: My Company
+          COMPANY_EMAIL: my@company.com
+          # This will be the first administrative user created on setup.
+          ADMIN_EMAIL: me@company.com
+          ADMIN_PASSWORD:
+            valueFrom:
+              secretKeyRef:
+                name: akaunting-secrets
+                key: admin-password
+
+# -- Configures service settings for the chart.
+# @default -- See values.yaml
+service:
+  main:
+    ports:
+      http:
+        port: 80
+
+ingress:
+  # -- Enable and configure ingress settings for the chart under this key.
+  # @default -- See values.yaml
+  main:
+    enabled: false
+
+# -- Configure persistence settings for the chart under this key.
+# @default -- See values.yaml
+persistence:
+  data:
+    enabled: true
+    accessMode: ReadWriteOnce
+    size: 5Gi
+    mountPath: /var/www/html
+
+mariadb:
+  architecture: standalone
+  auth:
+    database: akaunting
+    username: akaunting
+    existingSecret: mariadb-secrets
+  initdbScripts:
+    custom-initdb.sql: |-
+      GRANT ALL PRIVILEGES ON *.* TO 'akaunting'@'%' WITH GRANT OPTION;
