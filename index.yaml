@@ -3,6 +3,36 @@ entries:
   akaunting:
   - annotations:
       artifacthub.io/changes: |
+        - kind: fixed
+          description: incorrect persistence mount path
+    apiVersion: v2
+    appVersion: 3.0.15
+    created: "2023-10-23T13:35:57.067144183Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts/
+      version: 2.0.3
+    - name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      version: 14.0.3
+    description: akaunting helm package
+    digest: bb6d02f13e422b1e576d6401f42f31e9c86cd294bcafdbf78c75da3693074e45
+    home: https://github.com/ivanwongtf/nas-helm-charts/tree/master/charts/stable/akaunting
+    icon: https://assets.akaunting.com/site/img/logo/akaunting-logo.svg
+    keywords:
+    - akaunting
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - email: github@ivan.bz
+      name: Ivan Wong
+    name: akaunting
+    sources:
+    - https://github.com/akaunting/docker
+    urls:
+    - https://github.com/ivanwongtf/nas-helm-charts/releases/download/akaunting-1.0.2/akaunting-1.0.2.tgz
+    version: 1.0.2
+  - annotations:
+      artifacthub.io/changes: |
         - kind: added
           description: allow setting custom value for secrets
     apiVersion: v2
@@ -143,4 +173,4 @@ entries:
     urls:
     - https://github.com/ivanwongtf/nas-helm-charts/releases/download/dashy-1.0.0/dashy-1.0.0.tgz
     version: 1.0.0
-generated: "2023-10-23T09:39:50.792249248Z"
+generated: "2023-10-23T13:35:57.067161084Z"
