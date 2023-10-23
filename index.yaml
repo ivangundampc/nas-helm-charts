@@ -125,6 +125,33 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: fixed
+          description: Mount conf.yaml in ConfigMap to correct path
+    apiVersion: v2
+    appVersion: 2.1.1
+    created: "2023-10-23T16:09:39.046007959Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts/
+      version: 2.0.3
+    description: dashy helm package
+    digest: 62e2c0e5638ddd9fcf61ee5bb5838cbf791240a84e09f022fefcf00c789e7c77
+    home: https://github.com/ivanwongtf/nas-helm-charts/tree/master/charts/stable/dashy
+    icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/dashy.png
+    keywords:
+    - dashy
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - email: dashy@dashy.com
+      name: dashy
+    name: dashy
+    sources:
+    - https://github.com/dashy/dashy-docker
+    urls:
+    - https://github.com/ivanwongtf/nas-helm-charts/releases/download/dashy-1.0.3/dashy-1.0.3.tgz
+    version: 1.0.3
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: fixed
           description: Remove NOTES
     apiVersion: v2
     appVersion: 2.1.1
@@ -203,4 +230,4 @@ entries:
     urls:
     - https://github.com/ivanwongtf/nas-helm-charts/releases/download/dashy-1.0.0/dashy-1.0.0.tgz
     version: 1.0.0
-generated: "2023-10-23T15:23:29.135012958Z"
+generated: "2023-10-23T16:09:39.046025559Z"
