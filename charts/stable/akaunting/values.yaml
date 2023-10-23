@@ -5,7 +5,7 @@
 # https://github.com/bjw-s/helm-charts/blob/main/charts/library/common/values.yaml
 #
 
-useRandomGenratedValues: false
+useRandomGeneratedValues: false
 
 customSecrets:
   mariadbRootPassword: "pleaseChangeMe"
