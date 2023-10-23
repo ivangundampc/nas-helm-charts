@@ -4,6 +4,36 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: fixed
+          description: add an init container to copy /var/www/html files to pvc
+    apiVersion: v2
+    appVersion: 3.0.15
+    created: "2023-10-23T15:23:29.134993658Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts/
+      version: 2.0.3
+    - name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      version: 14.0.3
+    description: akaunting helm package
+    digest: 14897160f830dd2bad62bebf65d1d9d221e68f7b7a7fb6eae4adc93fc3bd07e9
+    home: https://github.com/ivanwongtf/nas-helm-charts/tree/master/charts/stable/akaunting
+    icon: https://assets.akaunting.com/site/img/logo/akaunting-logo.svg
+    keywords:
+    - akaunting
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - email: github@ivan.bz
+      name: Ivan Wong
+    name: akaunting
+    sources:
+    - https://github.com/akaunting/docker
+    urls:
+    - https://github.com/ivanwongtf/nas-helm-charts/releases/download/akaunting-1.0.3/akaunting-1.0.3.tgz
+    version: 1.0.3
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: fixed
           description: incorrect persistence mount path
     apiVersion: v2
     appVersion: 3.0.15
@@ -173,4 +203,4 @@ entries:
     urls:
     - https://github.com/ivanwongtf/nas-helm-charts/releases/download/dashy-1.0.0/dashy-1.0.0.tgz
     version: 1.0.0
-generated: "2023-10-23T13:35:57.067161084Z"
+generated: "2023-10-23T15:23:29.135012958Z"
