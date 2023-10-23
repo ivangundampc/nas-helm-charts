@@ -2,7 +2,7 @@ apiVersion: v2
 appVersion: 2.1.1
 description: dashy helm package
 name: dashy
-version: 1.0.2
+version: 1.0.3
 kubeVersion: ">=1.22.0-0"
 keywords:
   - dashy
@@ -20,4 +20,4 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: fixed
-      description: Remove NOTES
+      description: Mount conf.yaml in ConfigMap to correct path

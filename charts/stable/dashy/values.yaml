@@ -59,11 +59,12 @@ persistence:
     readOnly: false
     type: configMap
     name: dashy-config
-    mountPath: /app/public/conf.yml
-    subPath: conf.yml
-    items:
-      - key: conf.yml
-        path: conf.yml
+    advancedMounts:
+      main:
+        main:
+          - path: /app/public/conf.yml
+            readOnly: false
+            subPath: conf.yml
 
 configmap:
   config: 
