@@ -17,6 +17,10 @@ controllers:
   main:
     containers:
       main:
+        probe:
+          startup:
+            spec:
+              initialDelaySeconds: 180
         image:
           # -- image repository
           repository: akaunting/akaunting
@@ -86,7 +90,9 @@ persistence:
     enabled: true
     accessMode: ReadWriteOnce
     size: 5Gi
-    mountPath: /var/www/html
+    globalMounts:
+      - path: /var/www/html
+        readOnly: false
 
 mariadb:
   architecture: standalone
