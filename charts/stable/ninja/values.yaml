@@ -14,7 +14,7 @@ controllers:
           repository: ghcr.io/gngpp/ninja
           # -- image tag
           # @default -- chart.appVersion
-          tag: v0.7.9
+          tag: 0.7.9
           # -- image pull policy
           pullPolicy: IfNotPresent
 

@@ -2,7 +2,7 @@ apiVersion: v2
 appVersion: 0.7.9
 description: A reverse proxy for ChatGPT
 name: ninja
-version: 1.0.0
+version: 1.0.1
 kubeVersion: ">=1.22.0-0"
 keywords:
   - ninja
@@ -19,5 +19,5 @@ dependencies:
     repository: https://bjw-s.github.io/helm-charts/
 annotations:
   artifacthub.io/changes: |
-    - kind: added
-      description: Initial version
+    - kind: fixed
+      description: Image version tag
