@@ -237,6 +237,33 @@ entries:
           description: Cloudflare wrap
     apiVersion: v2
     appVersion: 0.7.9
+    created: "2023-11-09T09:53:09.782315203Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts/
+      version: 2.0.3
+    description: A reverse proxy for ChatGPT
+    digest: 83a43a15074425139f3bbd583bf8b8e362987c634e818b49fa42959ac3be78fa
+    home: https://github.com/ivanwongtf/nas-helm-charts/tree/master/charts/stable/ninja
+    icon: https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/2048px-ChatGPT_logo.svg.png
+    keywords:
+    - ninja
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - email: github@ivan.bz
+      name: Ivan Wong
+    name: ninja
+    sources:
+    - https://github.com/gngpp/ninja
+    urls:
+    - https://github.com/ivanwongtf/nas-helm-charts/releases/download/ninja-1.0.3/ninja-1.0.3.tgz
+    version: 1.0.3
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
+          description: Cloudflare wrap
+    apiVersion: v2
+    appVersion: 0.7.9
     created: "2023-11-09T09:46:39.4274432Z"
     dependencies:
     - name: common
@@ -312,4 +339,4 @@ entries:
     urls:
     - https://github.com/ivanwongtf/nas-helm-charts/releases/download/ninja-1.0.0/ninja-1.0.0.tgz
     version: 1.0.0
-generated: "2023-11-09T09:46:39.427468502Z"
+generated: "2023-11-09T09:53:09.782338804Z"
