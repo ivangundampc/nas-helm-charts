@@ -27,7 +27,7 @@ controllers:
           # -- Set the container timezone
           TZ: UTC
           DISABLE_DIRECT: true
-          PROXIES: socks5://warp:10000
+          PROXIES: socks5://ninja-warp:10000
   warp:
     containers:
       main:
