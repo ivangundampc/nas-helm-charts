@@ -9,6 +9,9 @@ controllers:
   main:
     containers:
       main:
+        command:
+          - ninja
+          - run
         image:
           # -- image repository
           repository: ghcr.io/gngpp/ninja
@@ -23,6 +26,17 @@ controllers:
         env:
           # -- Set the container timezone
           TZ: UTC
+          DISABLE_DIRECT: true
+          PROXIES: socks5://warp:10000
+  wrap:
+    containers:
+      main:
+        image:
+          # -- image repository
+          repository: ghcr.io/gngpp/wrap
+          # -- image tag
+          # @default -- chart.appVersion
+          tag: latest
 
 # -- Configures service settings for the chart.
 # @default -- See values.yaml
@@ -31,6 +45,12 @@ service:
     ports:
       http:
         port: 7999
+  wrap:
+    enabled: true
+    controller: wrap
+    ports:
+      tcp:
+        port: 10000
 
 ingress:
   # -- Enable and configure ingress settings for the chart under this key.
