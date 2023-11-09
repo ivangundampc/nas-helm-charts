@@ -28,12 +28,12 @@ controllers:
           TZ: UTC
           DISABLE_DIRECT: true
           PROXIES: socks5://warp:10000
-  wrap:
+  warp:
     containers:
       main:
         image:
           # -- image repository
-          repository: ghcr.io/gngpp/wrap
+          repository: ghcr.io/gngpp/warp
           # -- image tag
           # @default -- chart.appVersion
           tag: latest
@@ -45,9 +45,9 @@ service:
     ports:
       http:
         port: 7999
-  wrap:
+  warp:
     enabled: true
-    controller: wrap
+    controller: warp
     ports:
       tcp:
         port: 10000
