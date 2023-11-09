@@ -230,4 +230,32 @@ entries:
     urls:
     - https://github.com/ivanwongtf/nas-helm-charts/releases/download/dashy-1.0.0/dashy-1.0.0.tgz
     version: 1.0.0
-generated: "2023-10-23T16:09:39.046025559Z"
+  ninja:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
+          description: Initial version
+    apiVersion: v2
+    appVersion: 0.7.9
+    created: "2023-11-09T08:14:28.67646613Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts/
+      version: 2.0.3
+    description: A reverse proxy for ChatGPT
+    digest: 0532df00bc1de1c4ecb58f49b600a19f5fee840c1b1d9cfb6fe982ca46ad33f1
+    home: https://github.com/ivanwongtf/nas-helm-charts/tree/master/charts/stable/ninja
+    icon: https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/2048px-ChatGPT_logo.svg.png
+    keywords:
+    - ninja
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - email: github@ivan.bz
+      name: Ivan Wong
+    name: ninja
+    sources:
+    - https://github.com/gngpp/ninja
+    urls:
+    - https://github.com/ivanwongtf/nas-helm-charts/releases/download/ninja-1.0.0/ninja-1.0.0.tgz
+    version: 1.0.0
+generated: "2023-11-09T08:14:28.676680731Z"
