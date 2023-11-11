@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Chart.Name }}
+  namespace: {{ .Values.namespace }}
+data:
+{{- with .Values.authServerConfig }}
+  DEFAULT_PROVIDER: oidc
+  INSECURE_COOKIE: {{ .insecureCookie }}
+  COOKIE_DOMAIN: {{ .cookieDomain }}
+  DOMAINS: {{ .domains }}
+  AUTH_HOST: {{ .authHost }}
+  URL_PATH: {{ .urlPath }}
+  PROVIDERS_OIDC_ISSUER_URL: {{ .providersOidcIssuerUrl }}
+  PROVIDERS_OIDC_CLIENT_ID: {{ .providersOidcClientId }}
+{{- end }}

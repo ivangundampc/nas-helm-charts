@@ -1,0 +1,13 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: {{ .Chart.Name }}
+  namespace: {{ .Values.namespace }}
+
+spec:
+  forwardAuth:
+    address: http://{{ .Chart.Name }}
+    trustForwardHeader: true
+    authResponseHeaders:
+      - X-Forwarded-User
