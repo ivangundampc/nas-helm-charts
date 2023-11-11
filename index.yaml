@@ -234,6 +234,33 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: new 0.8.1 image
+    apiVersion: v2
+    appVersion: 0.8.1
+    created: "2023-11-11T17:55:32.415323051Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts/
+      version: 2.0.3
+    description: A reverse proxy for ChatGPT
+    digest: b7594bab0831d9533c9622a6196afa3f5396d5e1d73837e938e8d9a1c9087a8d
+    home: https://github.com/ivanwongtf/nas-helm-charts/tree/master/charts/stable/ninja
+    icon: https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/2048px-ChatGPT_logo.svg.png
+    keywords:
+    - ninja
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - email: github@ivan.bz
+      name: Ivan Wong
+    name: ninja
+    sources:
+    - https://github.com/gngpp/ninja
+    urls:
+    - https://github.com/ivanwongtf/nas-helm-charts/releases/download/ninja-1.0.6/ninja-1.0.6.tgz
+    version: 1.0.6
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: new 0.8.0 image
     apiVersion: v2
     appVersion: 0.8.0
@@ -452,4 +479,4 @@ entries:
     urls:
     - https://github.com/ivanwongtf/nas-helm-charts/releases/download/traefik-forward-auth-openid-1.0.0/traefik-forward-auth-openid-1.0.0.tgz
     version: 1.0.0
-generated: "2023-11-11T17:32:11.945196828Z"
+generated: "2023-11-11T17:55:32.41536588Z"
