@@ -31,7 +31,7 @@ controllers:
           repository: thomseddon/traefik-forward-auth
           # -- image tag
           # @default -- chart.appVersion
-          tag: 2.2.0
+          tag: latest
           # -- image pull policy
           pullPolicy: IfNotPresent
         resources:

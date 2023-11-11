@@ -1,13 +1,13 @@
 apiVersion: v2
-appVersion: 2.2.0
+appVersion: latest
 description: A helm chart for setting up an OpenID forward auth middleware for Traefik
 name: traefik-forward-auth-openid
-version: 1.0.0
+version: 1.0.1
 kubeVersion: ">=1.22.0-0"
 keywords:
   - traefik-forward-auth-openid
 home: https://github.com/ivanwongtf/nas-helm-charts/tree/master/charts/stable/traefik-forward-auth-openid
-icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/traefik.png
+icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/traefik.png
 sources:
   - https://github.com/thomseddon/traefik-forward-auth
   - https://github.com/sleighzy/k3s-traefik-forward-auth-openid-connect
@@ -20,5 +20,5 @@ dependencies:
     repository: https://bjw-s.github.io/helm-charts/
 annotations:
   artifacthub.io/changes: |
-    - kind: added
-      description: Initial version
+    - kind: fixed
+      description: Use workable image
