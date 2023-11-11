@@ -396,6 +396,35 @@ entries:
   traefik-forward-auth-openid:
   - annotations:
       artifacthub.io/changes: |
+        - kind: fixed
+          description: Use workable image
+    apiVersion: v2
+    appVersion: latest
+    created: "2023-11-11T17:32:11.945160039Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts/
+      version: 2.0.3
+    description: A helm chart for setting up an OpenID forward auth middleware for
+      Traefik
+    digest: 50c3169396b23b003c0f406486a430a76f0670d534be88e5794fbd34713649a3
+    home: https://github.com/ivanwongtf/nas-helm-charts/tree/master/charts/stable/traefik-forward-auth-openid
+    icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/traefik.png
+    keywords:
+    - traefik-forward-auth-openid
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - email: github@ivan.bz
+      name: Ivan Wong
+    name: traefik-forward-auth-openid
+    sources:
+    - https://github.com/thomseddon/traefik-forward-auth
+    - https://github.com/sleighzy/k3s-traefik-forward-auth-openid-connect
+    urls:
+    - https://github.com/ivanwongtf/nas-helm-charts/releases/download/traefik-forward-auth-openid-1.0.1/traefik-forward-auth-openid-1.0.1.tgz
+    version: 1.0.1
+  - annotations:
+      artifacthub.io/changes: |
         - kind: added
           description: Initial version
     apiVersion: v2
@@ -423,4 +452,4 @@ entries:
     urls:
     - https://github.com/ivanwongtf/nas-helm-charts/releases/download/traefik-forward-auth-openid-1.0.0/traefik-forward-auth-openid-1.0.0.tgz
     version: 1.0.0
-generated: "2023-11-11T08:55:13.834960773Z"
+generated: "2023-11-11T17:32:11.945196828Z"
