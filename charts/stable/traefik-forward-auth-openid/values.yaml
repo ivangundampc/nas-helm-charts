@@ -1,0 +1,96 @@
+#
+# IMPORTANT NOTE
+#
+# This chart inherits from our common library chart. You can check the default values/options here:
+# https://github.com/bjw-s/helm-charts/blob/main/charts/library/common/values.yaml
+#
+
+namespace: kube-system
+
+authServerConfig:
+  insecureCookie: "\"false\""
+  cookieDomain: example.com
+  domains: example.com
+  authHost: auth.example.com
+  urlPath: /_oauth
+  providersOidcIssuerUrl: https://example.com/auth/realms/master
+  providersOidcClientId: traefik-forward-auth-openid
+  providersOidcClientSecret: "changeme"
+  tls:
+    certResolver: default
+
+useRandomGeneratedSecret: true
+customSecret: "changeme"
+
+controllers:
+  main:
+    containers:
+      main:
+        image:
+          # -- image repository
+          repository: thomseddon/traefik-forward-auth
+          # -- image tag
+          # @default -- chart.appVersion
+          tag: 2.2.0
+          # -- image pull policy
+          pullPolicy: IfNotPresent
+        resources:
+          limits:
+            memory: '10Mi'
+            cpu: '100m'
+        ports:
+          - name: http
+            containerPort: 4181
+        securityContext:
+          readOnlyRootFilesystem: true
+          runAsNonRoot: true
+          runAsUser: 65534
+          runAsGroup: 65534
+          capabilities:
+            drop:
+              - ALL
+        probes:
+          liveness:
+            enable: true
+            custom: true
+            type: TCP
+            spec:
+              failureThreshold: 3
+              tcpSocket:
+                port: 4181
+              initialDelaySeconds: 10
+              periodSeconds: 10
+        # -- environment variables. See more environment variables in the [traefik-forward-auth-openid documentation](https://traefik-forward-auth-openid.org/docs).
+        # @default -- See below
+        env:
+          # -- Set the container timezone
+          TZ: UTC
+        envFrom:
+          - configMapRef:
+              name: traefik-forward-auth-openid
+          - secretRef:
+              name: traefik-forward-auth-openid
+
+# -- Configures service settings for the chart.
+# @default -- See values.yaml
+service:
+  main:
+    ports:
+      http:
+        enabled: true
+        protocol: TCP
+        port: 80
+        targetPort: 4181
+
+ingress:
+  # -- Enable and configure ingress settings for the chart under this key.
+  # @default -- See values.yaml
+  main:
+    enabled: false
+
+# -- Configure persistence settings for the chart under this key.
+# @default -- See values.yaml
+persistence: {}
+  # data:
+  #   enabled: false
+  #   mountPath: /data
