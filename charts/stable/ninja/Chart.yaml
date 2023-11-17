@@ -2,7 +2,7 @@ apiVersion: v2
 appVersion: 0.8.1
 description: A reverse proxy for ChatGPT
 name: ninja
-version: 1.0.7
+version: 1.0.8
 kubeVersion: ">=1.22.0-0"
 keywords:
   - ninja
@@ -20,4 +20,4 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: new 0.8.2 image
+      description: new 0.8.3 image
