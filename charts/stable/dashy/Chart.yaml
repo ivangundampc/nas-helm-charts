@@ -1,8 +1,8 @@
 apiVersion: v2
-appVersion: 2.1.1
+appVersion: 2.0.5
 description: dashy helm package
 name: dashy
-version: 1.0.3
+version: 1.0.4
 kubeVersion: ">=1.22.0-0"
 keywords:
   - dashy
@@ -20,4 +20,4 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: fixed
-      description: Mount conf.yaml in ConfigMap to correct path
+      description: Downgrade to 2.0.5 to support Keycloak login
