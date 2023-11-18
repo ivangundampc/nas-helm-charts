@@ -125,6 +125,33 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: fixed
+          description: Downgrade to 2.0.5 to support Keycloak login
+    apiVersion: v2
+    appVersion: 2.0.5
+    created: "2023-11-18T04:20:06.662152815Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts/
+      version: 2.0.3
+    description: dashy helm package
+    digest: 81c31e731f0528ec8d6f7e76c38f9aed0ee33788aff09dedb635aa703df1ac03
+    home: https://github.com/ivanwongtf/nas-helm-charts/tree/master/charts/stable/dashy
+    icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/dashy.png
+    keywords:
+    - dashy
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - email: dashy@dashy.com
+      name: dashy
+    name: dashy
+    sources:
+    - https://github.com/dashy/dashy-docker
+    urls:
+    - https://github.com/ivanwongtf/nas-helm-charts/releases/download/dashy-1.0.4/dashy-1.0.4.tgz
+    version: 1.0.4
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: fixed
           description: Mount conf.yaml in ConfigMap to correct path
     apiVersion: v2
     appVersion: 2.1.1
@@ -452,4 +479,4 @@ entries:
     urls:
     - https://github.com/ivanwongtf/nas-helm-charts/releases/download/traefik-forward-auth-openid-1.0.0/traefik-forward-auth-openid-1.0.0.tgz
     version: 1.0.0
-generated: "2023-11-17T03:49:53.792334029Z"
+generated: "2023-11-18T04:20:06.662196767Z"
