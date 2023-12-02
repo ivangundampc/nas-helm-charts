@@ -17,7 +17,7 @@ controllers:
           repository: ghcr.io/gngpp/ninja
           # -- image tag
           # @default -- chart.appVersion
-          tag: 0.8.6
+          tag: 0.9.0
           # -- image pull policy
           pullPolicy: IfNotPresent
 
@@ -26,7 +26,6 @@ controllers:
         env:
           # -- Set the container timezone
           TZ: UTC
-          DISABLE_DIRECT: true
           PROXIES: socks5://ninja-warp:10000
   warp:
     containers:
