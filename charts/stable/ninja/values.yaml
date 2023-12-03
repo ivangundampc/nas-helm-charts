@@ -28,6 +28,7 @@ controllers:
           TZ: UTC
           PROXIES: socks5://ninja-warp:10000
   warp:
+    enabled: true
     containers:
       main:
         image:
