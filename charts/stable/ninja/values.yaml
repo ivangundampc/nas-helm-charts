@@ -37,6 +37,15 @@ controllers:
           # @default -- chart.appVersion
           tag: latest
 
+warpRestartCronjob: 
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 2
+  concurrencyPolicy: Forbid
+  schedule: '0 * * * *'
+  backoffLimit: 2 
+  activeDeadlineSeconds: 600
+  restartPolicy: Never
+
 # -- Configures service settings for the chart.
 # @default -- See values.yaml
 service:

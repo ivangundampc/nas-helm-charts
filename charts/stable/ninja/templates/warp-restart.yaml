@@ -1,0 +1,62 @@
+{{- if .Values.controllers.warp.enabled }}
+---
+kind: ServiceAccount
+apiVersion: v1
+metadata:
+  name: warp-restart
+  namespace: {{ .Release.Namespace }}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: warp-restart
+  namespace: {{ .Release.Namespace }}
+rules:
+  - apiGroups: ["apps", "extensions"]
+    resources: ["deployments"]
+    resourceNames: ["ninja-warp"]
+    verbs: ["get", "patch", "list", "watch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: warp-restart
+  namespace: {{ .Release.Namespace }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: warp-restart
+subjects:
+  - kind: ServiceAccount
+    name: warp-restart
+    namespace: {{ .Release.Namespace }}
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: warp-restart
+  namespace: {{ .Release.Namespace }}
+spec:
+  {{- with .Values.warpRestartCronjob }}
+  successfulJobsHistoryLimit: {{ .successfulJobsHistoryLimit }}
+  failedJobsHistoryLimit: {{ .failedJobsHistoryLimit }}
+  concurrencyPolicy: {{ .concurrencyPolicy }}
+  schedule: {{ .schedule }}
+  jobTemplate:
+    spec:
+      backoffLimit: {{ .backoffLimit }}
+      activeDeadlineSeconds: {{ .activeDeadlineSeconds }} 
+      template:
+        spec:
+          serviceAccountName: warp-restart
+          restartPolicy: {{ .restartPolicy }}
+          containers:
+            - name: kubectl
+              image: bitnami/kubectl 
+              command:
+                - 'kubectl'
+                - 'rollout'
+                - 'restart'
+                - 'deployment/ninja-warp'
+  {{- end }}
+{{- end }}
