@@ -260,6 +260,33 @@ entries:
   ninja:
   - annotations:
       artifacthub.io/changes: |
+        - kind: fixed
+          description: fix default value in warp
+    apiVersion: v2
+    appVersion: 0.9.0
+    created: "2023-12-03T06:36:07.611744463Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts/
+      version: 2.0.3
+    description: A reverse proxy for ChatGPT
+    digest: 3b8ed9f1f6b3d7ce4cacf79327dcf14a20583aa3dba88e4ad275d4fc1c302162
+    home: https://github.com/ivanwongtf/nas-helm-charts/tree/master/charts/stable/ninja
+    icon: https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/2048px-ChatGPT_logo.svg.png
+    keywords:
+    - ninja
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - email: github@ivan.bz
+      name: Ivan Wong
+    name: ninja
+    sources:
+    - https://github.com/gngpp/ninja
+    urls:
+    - https://github.com/ivanwongtf/nas-helm-charts/releases/download/ninja-1.1.1/ninja-1.1.1.tgz
+    version: 1.1.1
+  - annotations:
+      artifacthub.io/changes: |
         - kind: added
           description: cronjob to restart warp every hour
     apiVersion: v2
@@ -560,4 +587,4 @@ entries:
     urls:
     - https://github.com/ivanwongtf/nas-helm-charts/releases/download/traefik-forward-auth-openid-1.0.0/traefik-forward-auth-openid-1.0.0.tgz
     version: 1.0.0
-generated: "2023-12-03T06:27:25.866725838Z"
+generated: "2023-12-03T06:36:07.611806168Z"
