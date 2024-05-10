@@ -121,6 +121,34 @@ entries:
     urls:
     - https://github.com/ivanwongtf/nas-helm-charts/releases/download/akaunting-1.0.0/akaunting-1.0.0.tgz
     version: 1.0.0
+  cloudflare-ddns:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
+          description: Initial version
+    apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-05-10T15:04:27.078776601Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts/
+      version: 2.0.3
+    description: timothyjmiller/cloudflare-ddns helm package
+    digest: 9caae7cad4464bfdee83111c221665edace55b82df6412770e8fc15dbbef9212
+    home: https://github.com/ivanwongtf/nas-helm-charts/tree/master/charts/stable/cloudflare-ddns
+    icon: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/cloudflare-ddns.png
+    keywords:
+    - cloudflare-ddns
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - email: github@ivan.bz
+      name: Ivan Wong
+    name: cloudflare-ddns
+    sources:
+    - https://github.com/timothymiller/cloudflare-ddns
+    urls:
+    - https://github.com/ivanwongtf/nas-helm-charts/releases/download/cloudflare-ddns-1.0.0/cloudflare-ddns-1.0.0.tgz
+    version: 1.0.0
   dashy:
   - annotations:
       artifacthub.io/changes: |
@@ -316,4 +344,4 @@ entries:
     urls:
     - https://github.com/ivanwongtf/nas-helm-charts/releases/download/traefik-forward-auth-openid-1.0.0/traefik-forward-auth-openid-1.0.0.tgz
     version: 1.0.0
-generated: "2024-01-24T04:59:50.67839028Z"
+generated: "2024-05-10T15:04:27.078807267Z"
