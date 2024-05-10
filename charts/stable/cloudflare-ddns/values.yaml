@@ -49,7 +49,9 @@ persistence:
     name: cloudflare-ddns-config
     enabled: true
     type: secret
-    mountPath: /etc/cloudflare-ddns
+    globalMounts:
+      - path: /etc/cloudflare-ddns/
+        readOnly: true
 
 secrets: 
   config:
