@@ -285,6 +285,34 @@ entries:
     urls:
     - https://github.com/ivanwongtf/nas-helm-charts/releases/download/dashy-1.0.0/dashy-1.0.0.tgz
     version: 1.0.0
+  proxy-py:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
+          description: Initial version
+    apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-07-20T06:44:21.144955113Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts/
+      version: 2.0.3
+    description: proxy.py helm package
+    digest: 17f24affe05f55ebc19b2e1439ac36092bad767e0fc1736cc6665acd75a2fd9a
+    home: https://github.com/ivanwongtf/nas-helm-charts/tree/master/charts/stable/proxy-py
+    icon: https://raw.githubusercontent.com/abhinavsingh/proxy.py/develop/ProxyPy.png
+    keywords:
+    - proxy-py
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - email: github@ivan.bz
+      name: Ivan Wong
+    name: proxy-py
+    sources:
+    - https://github.com/abhinavsingh/proxy.py
+    urls:
+    - https://github.com/ivanwongtf/nas-helm-charts/releases/download/proxy-py-1.0.0/proxy-py-1.0.0.tgz
+    version: 1.0.0
   traefik-forward-auth-openid:
   - annotations:
       artifacthub.io/changes: |
@@ -344,4 +372,4 @@ entries:
     urls:
     - https://github.com/ivanwongtf/nas-helm-charts/releases/download/traefik-forward-auth-openid-1.0.0/traefik-forward-auth-openid-1.0.0.tgz
     version: 1.0.0
-generated: "2024-05-10T15:04:27.078807267Z"
+generated: "2024-07-20T06:44:21.144986241Z"
