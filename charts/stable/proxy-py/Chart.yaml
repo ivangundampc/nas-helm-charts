@@ -1,0 +1,23 @@
+apiVersion: v2
+appVersion: 1.0.0
+description: proxy.py helm package
+name: proxy-py
+version: 1.0.0
+kubeVersion: ">=1.22.0-0"
+keywords:
+  - proxy-py
+home: https://github.com/ivanwongtf/nas-helm-charts/tree/master/charts/stable/proxy-py
+icon: https://raw.githubusercontent.com/abhinavsingh/proxy.py/develop/ProxyPy.png
+sources:
+  - https://github.com/abhinavsingh/proxy.py
+maintainers:
+  - name: Ivan Wong
+    email: github@ivan.bz
+dependencies:
+  - name: common
+    version: 2.0.3
+    repository: https://bjw-s.github.io/helm-charts/
+annotations:
+  artifacthub.io/changes: |
+    - kind: added
+      description: Initial version
